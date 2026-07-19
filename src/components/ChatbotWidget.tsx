@@ -202,10 +202,10 @@ export default function ChatbotWidget() {
             className="w-[calc(100vw-2rem)] max-w-[24rem] overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white/95 shadow-[0_24px_80px_-24px_rgba(15,23,42,0.35)] backdrop-blur-xl"
           >
             <div className="relative overflow-hidden border-b border-slate-200/80 bg-slate-950 px-5 py-4 text-white">
-              <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-indigo-500/20 blur-3xl"></div>
+              <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-emerald-500/20 blur-3xl"></div>
               <div className="relative flex items-start justify-between gap-4">
                 <div>
-                  <div className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-indigo-300">
+                  <div className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-emerald-300">
                     <Sparkles className="h-4 w-4" />
                     NexGenius Bot
                   </div>
@@ -234,7 +234,7 @@ export default function ChatbotWidget() {
                   <div
                     className={`max-w-[85%] rounded-[1.5rem] px-4 py-3 text-base leading-relaxed shadow-sm ${
                       message.role === 'user'
-                        ? 'bg-indigo-600 text-white'
+                        ? 'bg-emerald-600 text-white'
                         : 'border border-slate-200 bg-slate-50 text-slate-700'
                     }`}
                   >
@@ -246,7 +246,7 @@ export default function ChatbotWidget() {
                           <Link
                             key={`${message.id}-${link.href}`}
                             href={link.href}
-                            className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-indigo-200 hover:text-indigo-700"
+                            className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-emerald-200 hover:text-emerald-700"
                           >
                             {link.label}
                           </Link>
@@ -261,9 +261,9 @@ export default function ChatbotWidget() {
                 <div className="flex justify-start">
                   <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500 shadow-sm">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 animate-pulse rounded-full bg-indigo-400"></span>
-                      <span className="h-2 w-2 animate-pulse rounded-full bg-indigo-400 [animation-delay:120ms]"></span>
-                      <span className="h-2 w-2 animate-pulse rounded-full bg-indigo-400 [animation-delay:240ms]"></span>
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 [animation-delay:120ms]"></span>
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 [animation-delay:240ms]"></span>
                     </div>
                   </div>
                 </div>
@@ -281,7 +281,7 @@ export default function ChatbotWidget() {
                       key={suggestion}
                       type="button"
                       onClick={() => void sendMessage(suggestion)}
-                      className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-indigo-200 hover:text-indigo-700"
+                      className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-emerald-200 hover:text-emerald-700"
                     >
                       {suggestion}
                     </button>
@@ -295,7 +295,7 @@ export default function ChatbotWidget() {
                 type="button"
                 onClick={() => void completeConversation()}
                 disabled={messages.length < 2 || isLoading || isCompleting}
-                className="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700 transition-colors hover:border-indigo-200 hover:text-indigo-700 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-400"
+                className="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700 transition-colors hover:border-emerald-200 hover:text-emerald-700 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-400"
               >
                 <Check className="h-4 w-4" />
                 End chat & send email
@@ -319,7 +319,7 @@ export default function ChatbotWidget() {
                 <button
                   type="submit"
                   disabled={isLoading || isCompleting || !input.trim()}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white transition-all hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-indigo-300"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-white transition-all hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-emerald-300"
                   aria-label="Send message"
                 >
                   <Send className="h-4 w-4" />
@@ -334,14 +334,14 @@ export default function ChatbotWidget() {
         type="button"
         whileTap={{ scale: 0.96 }}
         onClick={() => setIsOpen((current) => !current)}
-        className="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-5 py-4 text-white shadow-[0_20px_50px_-18px_rgba(15,23,42,0.45)] transition-all hover:bg-indigo-600"
+        className="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-5 py-4 text-white shadow-[0_20px_50px_-18px_rgba(15,23,42,0.45)] transition-all hover:bg-emerald-600"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-indigo-300 transition-colors group-hover:text-white">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-emerald-300 transition-colors group-hover:text-white">
           {isOpen ? <X className="h-5 w-5" /> : <Bot className="h-5 w-5" />}
         </span>
         <span className="hidden pr-1 text-left sm:block">
           <span className="block text-sm font-bold leading-tight">Need help?</span>
-          <span className="block text-xs text-slate-300 group-hover:text-indigo-100">
+          <span className="block text-xs text-slate-300 group-hover:text-emerald-100">
             Chat with NexGenius
           </span>
         </span>
