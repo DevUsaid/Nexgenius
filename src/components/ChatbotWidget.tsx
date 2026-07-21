@@ -38,6 +38,7 @@ function getConversationHistory(messages: Message[]): ChatbotMessage[] {
 export default function ChatbotWidget() {
   const welcome = getWelcomeReply();
   const [isOpen, setIsOpen] = useState(false);
+  const [showGreeting, setShowGreeting] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isCompleting, setIsCompleting] = useState(false);
@@ -61,6 +62,23 @@ export default function ChatbotWidget() {
 
     container.scrollTop = container.scrollHeight;
   }, [messages, isLoading, isCompleting]);
+
+  useEffect(() => {
+    // Show greeting after 3 seconds
+    const showTimer = setTimeout(() => {
+      setShowGreeting(true);
+    }, 3000);
+
+    // Hide greeting after 10 seconds
+    const hideTimer = setTimeout(() => {
+      setShowGreeting(false);
+    }, 10000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
 
   async function sendMessage(messageText: string) {
     const trimmed = messageText.trim();
@@ -330,22 +348,30 @@ export default function ChatbotWidget() {
         ) : null}
       </AnimatePresence>
 
+      {/* Conditional Greeting Bubble */}
+      <AnimatePresence>
+        {showGreeting && !isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            className="absolute bottom-full right-0 mb-4 w-48 rounded-2xl bg-white p-3 shadow-xl border border-slate-200 z-[71]"
+          >
+            <p className="text-xs font-semibold text-slate-800">Need help?</p>
+            <p className="text-[10px] text-slate-500 mt-0.5">Chat with NexGenius</p>
+            {/* Small triangle pointing down */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-slate-200 transform rotate-45"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.button
         type="button"
         whileTap={{ scale: 0.96 }}
-        onClick={() => setIsOpen((current) => !current)}
-        className="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-5 py-4 text-white shadow-[0_20px_50px_-18px_rgba(15,23,42,0.45)] transition-all hover:bg-emerald-600"
+        onClick={() => { setIsOpen((current) => !current); setShowGreeting(false); }}
+        className="group flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 text-emerald-300 shadow-[0_20px_50px_-18px_rgba(15,23,42,0.45)] transition-all hover:bg-emerald-600 hover:text-white relative z-[72]"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-emerald-300 transition-colors group-hover:text-white">
-          {isOpen ? <X className="h-5 w-5" /> : <Bot className="h-5 w-5" />}
-        </span>
-        <span className="hidden pr-1 text-left sm:block">
-          <span className="block text-sm font-bold leading-tight">Need help?</span>
-          <span className="block text-xs text-slate-300 group-hover:text-emerald-100">
-            Chat with NexGenius
-          </span>
-        </span>
-        <MessageCircle className="h-5 w-5 sm:hidden" />
+        {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
       </motion.button>
     </div>
   );

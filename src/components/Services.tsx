@@ -1,44 +1,56 @@
 "use client";
 
-import { Cpu, MessageSquare, Zap, Code, Sparkles, Layout, ArrowUpRight } from 'lucide-react';
+import { Bot, MessageSquare, Mic, Database, Workflow, Globe, ShoppingCart, LayoutTemplate, ArrowUpRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
 const services = [
   {
-    title: 'Custom Web Development',
-    description: 'Build high-performance, SEO-optimized, and scalable web applications using modern frameworks like Next.js and React.',
-    icon: <Code className="h-7 w-7" />,
-    badge: 'Web'
+    title: 'AI Agent Development',
+    description: 'Custom autonomous AI agents built for customer support, sales, lead qualification, and HR recruitment.',
+    icon: <Bot className="h-7 w-7" />,
+    badge: 'Primary'
   },
   {
-    title: 'AI SaaS Development',
-    description: 'End-to-end development of robust AI-powered Software as a Service products tailored to your specific business ideas.',
-    icon: <Sparkles className="h-7 w-7" />,
-    badge: 'Product'
-  },
-  {
-    title: 'Custom AI Integration',
-    description: 'Integrate advanced OpenAI, Anthropic, or custom local LLM intelligence directly into your existing software and operational pipelines.',
-    icon: <Cpu className="h-7 w-7" />,
-    badge: 'Intelligence'
-  },
-  {
-    title: 'AI-Powered Chatbots',
-    description: 'Build custom-trained, context-aware 24/7 support chatbots that resolve customer queries instantly and sync data directly with your backend.',
+    title: 'AI Chatbot Development',
+    description: 'Context-aware chatbots for websites, WhatsApp, Instagram, and E-commerce tailored to your specific data.',
     icon: <MessageSquare className="h-7 w-7" />,
-    badge: 'Support'
+    badge: 'Primary'
   },
   {
-    title: 'Workflow Automation',
-    description: 'Connect your business tools (Gmail, CRM, Slack) into seamless, custom-built automated workflows that run 24/7.',
-    icon: <Zap className="h-7 w-7" />,
-    badge: 'Efficiency'
+    title: 'Voice AI Solutions',
+    description: 'AI receptionists and call answering agents capable of booking appointments and handling outbound support.',
+    icon: <Mic className="h-7 w-7" />,
+    badge: 'Primary'
   },
   {
-    title: 'UI/UX & Web Design',
-    description: 'Premium, user-centric interface design specifically crafted for modern web apps and complex AI dashboards.',
-    icon: <Layout className="h-7 w-7" />,
-    badge: 'Design'
+    title: 'RAG AI Systems',
+    description: 'Knowledge base chatbots and Document AI that securely queries your company SOPs and PDFs.',
+    icon: <Database className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'AI Automation',
+    description: 'Workflow, CRM, and email automation designed to streamline operations and eliminate manual data entry.',
+    icon: <Workflow className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'Custom Web Applications',
+    description: 'AI-powered workflows, Business Automation platforms, custom dashboards, and admin panels built with modern architecture.',
+    icon: <Globe className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Shopify and WooCommerce stores powered by AI shopping assistants and recommendation engines.',
+    icon: <ShoppingCart className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'WordPress Development',
+    description: 'High-performance business websites, portfolios, landing pages, and blogs with integrated SEO and speed optimization.',
+    icon: <LayoutTemplate className="h-7 w-7" />,
+    badge: 'Primary'
   }
 ];
 
@@ -57,7 +69,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
   }
 };
 
@@ -71,14 +83,14 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-primary mb-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-primary mb-4">
             Services
           </p>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white">
-            What We <span className="text-gradient">Offer</span>
+          <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-serif mb-6 tracking-tight text-white leading-tight">
+            What We <span className="text-brand-primary drop-shadow-[0_0_15px_rgba(57,255,20,0.4)] font-bold">Offer</span>
           </h2>
-          <p className="text-brand-muted max-w-2xl mx-auto text-lg font-medium">
-            Supercharge your business operations, reduce manual overhead, and optimize efficiency with our tailored AI workflows.
+          <p className="text-text-secondary max-w-2xl mx-auto text-lg font-medium">
+            Deploy autonomous systems, robust AI workflows, and premium digital experiences to transform your business.
           </p>
         </motion.div>
 
@@ -87,35 +99,35 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="glass-card p-8 rounded-[2.5rem] flex flex-col justify-between items-start text-left h-full"
+              className="glass-card p-8 rounded-[2rem] flex flex-col justify-between items-start text-left h-full group"
             >
               <div className="w-full">
                 <div className="flex justify-between items-center mb-8 w-full">
-                  <div className="p-4 bg-brand-dark/60 border border-white/10 rounded-2xl text-brand-primary transition-all duration-300">
+                  <div className="p-4 bg-surface border border-border-subtle rounded-2xl text-brand-primary group-hover:text-brand-accent transition-all duration-300">
                     {service.icon}
                   </div>
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-accent bg-brand-primary/10 px-3 py-1 rounded-full">
                     {service.badge}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-xl font-serif mb-3 text-white leading-tight">
                   {service.title}
                 </h3>
 
-                <p className="text-brand-muted leading-relaxed text-sm mb-6">
+                <p className="text-text-secondary leading-relaxed text-sm mb-6">
                   {service.description}
                 </p>
               </div>
 
-              <a href="#contact" className="inline-flex items-center text-xs font-bold text-brand-primary hover:text-brand-accent transition-colors gap-1 mt-auto">
-                Request Setup <ArrowUpRight className="h-4 w-4" />
+              <a href="/contact" className="inline-flex items-center text-sm font-semibold text-brand-primary group-hover:text-brand-accent transition-colors gap-1 mt-auto">
+                Explore <ArrowUpRight className="h-4 w-4" />
               </a>
             </motion.div>
           ))}
@@ -124,4 +136,3 @@ export default function Services() {
     </section>
   );
 }
-

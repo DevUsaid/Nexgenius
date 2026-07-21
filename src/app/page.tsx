@@ -19,22 +19,22 @@ export default function Home() {
         <Services />
 
         {/* Process Section */}
-        <section id="process" className="scroll-mt-28 py-24 px-6 border-t border-white/5 bg-transparent backdrop-blur-[2px]">
+        <section id="process" className="scroll-mt-28 py-24 px-6 border-t border-border-subtle bg-transparent backdrop-blur-[2px]">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-hidden">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="relative hidden lg:flex flex-col justify-end items-start h-full min-h-[400px]"
               >
-                {/* 3D Working Mascot */}
+                {/* 3D Working Mascot Placeholder */}
                 <Process3DScene />
                 
-                <div className="p-6 rounded-2xl bg-brand-card/80 backdrop-blur-md border border-white/10 max-w-[260px] shadow-2xl relative z-10 mb-10 ml-4">
-                  <p className="text-sm italic text-slate-300">&quot;NexGenius transformed our sales workflow and halved our response times.&quot;</p>
-                  <span className="text-[10px] text-brand-accent font-bold mt-3 block uppercase tracking-wider">— Strategic Growth Client</span>
+                <div className="p-6 rounded-2xl glass-card max-w-[260px] relative z-10 mb-10 ml-4">
+                  <p className="text-sm italic text-text-secondary">&quot;NexGenius Solutions transformed our sales workflow and halved our response times.&quot;</p>
+                  <span className="text-[10px] text-brand-accent font-semibold mt-3 block uppercase tracking-wider">— Strategic Growth Client</span>
                 </div>
               </motion.div>
 
@@ -42,31 +42,32 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-primary mb-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-primary mb-4">
                   Process
                 </p>
-                <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white leading-tight">
+                <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight text-white leading-tight">
                   Our Proven Process for <br />
-                  <span className="text-gradient">Digital Success</span>
+                  <span className="text-brand-primary drop-shadow-[0_0_15px_rgba(57,255,20,0.4)] font-bold ">Digital Success</span>
                 </h2>
-                <p className="text-brand-muted text-lg mb-8 leading-relaxed max-w-xl">
+                <p className="text-text-secondary text-lg mb-8 leading-relaxed max-w-xl">
                   We don&apos;t just write code; we analyze, design, and automate to ensure your operations run with maximum efficiency.
                 </p>
                 <div className="space-y-8">
                   {[
-                    { step: '01', title: 'Share Your Workflow', desc: 'From lead gen to client onboarding, just share your workflow and the tools you use.' },
-                    { step: '02', title: 'We Build the System', desc: 'We design and set up custom automations that connect your tools with AI—so work happens while you sleep.' },
-                    { step: '03', title: 'Launch and Take Control', desc: 'You get a plug-and-play dashboard with a walkthrough to manage everything easily.' }
+                    { step: '01', title: 'Discover', desc: 'From lead gen to client onboarding, just share your workflow and the tools you use.' },
+                    { step: '02', title: 'Strategy', desc: 'We architect a custom strategy bridging the gap between your manual processes and AI.' },
+                    { step: '03', title: 'Development', desc: 'We design and set up custom automations that connect your tools with AI—so work happens while you sleep.' },
+                    { step: '04', title: 'Deployment', desc: 'You get a plug-and-play dashboard with a walkthrough to manage everything easily.' }
                   ].map((item, i) => (
                     <div key={i} className="flex space-x-4">
                       <span className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-xl bg-brand-primary/10 text-brand-primary font-bold border border-brand-primary/20">
                         {item.step}
                       </span>
                       <div>
-                        <h4 className="font-bold text-white text-lg">{item.title}</h4>
-                        <p className="text-brand-muted text-sm mt-1 leading-relaxed">{item.desc}</p>
+                        <h4 className="font-semibold text-white text-lg">{item.title}</h4>
+                        <p className="text-text-secondary text-sm mt-1 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}

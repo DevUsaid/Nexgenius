@@ -115,7 +115,7 @@ export default function ServicePageTemplate({
               variants={fadeUp}
               className="mb-8 text-5xl font-black text-slate-950 md:text-7xl"
             >
-              {title} <span className="text-gradient">{highlight}</span>
+              {title} <span className="text-brand-primary drop-shadow-[0_0_15px_rgba(57,255,20,0.4)] font-bold ">{highlight}</span>
             </motion.h1>
 
             <motion.p
