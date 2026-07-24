@@ -55,7 +55,7 @@ function CuteHumanoidRobot() {
   // Common materials
   const whiteCeramic = new THREE.MeshPhysicalMaterial({ color: "#ffffff", metalness: 0.1, roughness: 0.1, clearcoat: 1, clearcoatRoughness: 0.1 });
   const blackGlass = new THREE.MeshPhysicalMaterial({ color: "#050505", metalness: 0.9, roughness: 0.1, clearcoat: 1 });
-  const emeraldGlow = new THREE.MeshBasicMaterial({ color: "#10b981" });
+  const emeraldGlow = new THREE.MeshBasicMaterial({ color: "#39FF14" });
   const darkJoint = new THREE.MeshStandardMaterial({ color: "#222222", metalness: 0.8, roughness: 0.5 });
 
   return (
@@ -74,7 +74,7 @@ function CuteHumanoidRobot() {
             <Text
               position={[0, 0, 0.91]}
               fontSize={0.45}
-              color="#10b981"
+              color="#39FF14"
               anchorX="center"
               anchorY="middle"
               material-toneMapped={false}
@@ -150,12 +150,15 @@ function CuteHumanoidRobot() {
 
 export default function Scroll3DScene() {
   return (
-    <div className="absolute top-0 right-0 w-full h-[100vh] pointer-events-none z-40">
+    <div className="absolute top-0 right-0 w-full h-[100vh] pointer-events-none z-40 overflow-hidden">
+      {/* Soft Neon Green Radial Glow Behind Robot */}
+      <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[450px] h-[450px] md:w-[650px] md:h-[650px] bg-[#39FF14]/25 blur-[140px] rounded-full z-0 pointer-events-none mix-blend-screen animate-pulse" style={{ animationDuration: '7s' }} />
+
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
         <ambientLight intensity={1.5} />
         <directionalLight position={[10, 10, 5]} intensity={3} color="#ffffff" />
         <directionalLight position={[-10, 5, 5]} intensity={1.5} color="#e2e8f0" />
-        <pointLight position={[0, 2, 2]} intensity={2} color="#10b981" distance={5} />
+        <pointLight position={[0, 2, 2]} intensity={2} color="#39FF14" distance={5} />
 
         <CuteHumanoidRobot />
 

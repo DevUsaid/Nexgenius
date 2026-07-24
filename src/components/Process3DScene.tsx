@@ -162,19 +162,19 @@ function TaskRobot() {
           
           <mesh>
             <planeGeometry args={[2, 1.2]} />
-            <meshBasicMaterial color="#10b981" transparent opacity={0.15} side={THREE.DoubleSide} />
+            <meshBasicMaterial color="#39FF14" transparent opacity={0.15} side={THREE.DoubleSide} />
           </mesh>
           <mesh>
             <planeGeometry args={[2, 1.2]} />
-            <meshBasicMaterial color="#10b981" wireframe transparent opacity={0.3} />
+            <meshBasicMaterial color="#39FF14" wireframe transparent opacity={0.3} />
           </mesh>
         </group>
         
         {/* Speech Bubble */}
         <Html position={[0, 3.2, 0]} center zIndexRange={[100, 0]}>
-          <div className={`w-48 p-3 rounded-xl backdrop-blur-md shadow-2xl text-xs font-medium leading-relaxed opacity-100 text-center transition-all duration-300 ${hovered ? 'bg-[#10b981] border border-[#10b981] text-white scale-110' : 'bg-brand-card/90 border border-[#10b981]/30 text-slate-200'}`}>
-            <div className={`absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 border-b border-r rotate-45 transition-colors duration-300 ${hovered ? 'bg-[#10b981] border-[#10b981]' : 'bg-brand-card/90 border-[#10b981]/30'}`} />
-            <p className={`relative z-10 font-bold transition-colors duration-300 ${hovered ? 'text-white' : 'text-[#10b981] animate-pulse'}`}>
+          <div className={`w-48 p-3 rounded-xl backdrop-blur-md shadow-2xl text-xs font-medium leading-relaxed opacity-100 text-center transition-all duration-300 ${hovered ? 'bg-[#39FF14] border border-[#39FF14] text-[#021107] scale-110' : 'bg-brand-card/90 border border-[#39FF14]/30 text-slate-200'}`}>
+            <div className={`absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 border-b border-r rotate-45 transition-colors duration-300 ${hovered ? 'bg-[#39FF14] border-[#39FF14]' : 'bg-brand-card/90 border-[#39FF14]/30'}`} />
+            <p className={`relative z-10 font-bold transition-colors duration-300 ${hovered ? 'text-[#021107]' : 'text-[#39FF14] animate-pulse'}`}>
               {hovered ? "System Optimized! 🚀" : "Building Automation..."}
             </p>
           </div>
@@ -187,11 +187,14 @@ function TaskRobot() {
 export default function Process3DScene() {
   return (
     <div className="absolute inset-0 w-full h-full z-0">
+      {/* Soft Neon Green Radial Glow Behind Mascot */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-[#39FF14]/20 blur-[130px] rounded-full z-0 pointer-events-none mix-blend-screen animate-pulse" style={{ animationDuration: '8s' }} />
+
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <ambientLight intensity={1.5} />
         <directionalLight position={[5, 10, 5]} intensity={2.5} color="#ffffff" />
         <directionalLight position={[-5, 5, -5]} intensity={1} color="#e2e8f0" />
-        <pointLight position={[0, 1, 1.5]} intensity={3} color="#10b981" distance={4} />
+        <pointLight position={[0, 1, 1.5]} intensity={3} color="#39FF14" distance={4} />
         
         <TaskRobot />
         

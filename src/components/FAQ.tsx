@@ -15,8 +15,8 @@ const faqs: FAQItem[] = [
     answer: "AI automation streamlines operations by eliminating repetitive tasks. It can automate lead generation, instant customer support (via chatbots), financial reporting, data entry, and connect your software systems together. This allows your team to focus on high-value strategic work, saving both time and money."
   },
   {
-    question: "What industries do you serve?",
-    answer: "We build custom solutions for SaaS platforms, E-commerce stores, FinTech & Finance, Healthcare providers, and professional agencies. If your business uses digital tools and has workflows that follow repeatable rules, AI automation can work for you."
+    question: "Do you only work with tech companies?",
+    answer: "We build custom solutions for Business Automation, E-commerce stores, FinTech & Finance, Healthcare providers, and professional agencies. If your business uses digital tools and has workflows that follow repeatable rules, AI automation can work for you."
   },
   {
     question: "How long does it take to implement AI automation?",
@@ -52,8 +52,8 @@ export default function FAQ() {
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-primary mb-4">
             Answers
           </p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">
-            Frequently Asked Questions
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
           <p className="text-brand-muted text-lg max-w-xl mx-auto">
             Got questions about how AI automation works? We have answers.
@@ -70,11 +70,11 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="rounded-2xl border border-white/5 bg-brand-card/40 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-brand-primary/30"
+                className="rounded-2xl border border-white/10 glass-card overflow-hidden transition-all duration-300 hover:border-brand-primary/40"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left font-bold text-white text-lg transition-colors hover:text-brand-accent"
+                  className="w-full flex items-center justify-between p-6 text-left font-bold text-white text-lg transition-colors hover:text-brand-primary cursor-pointer"
                 >
                   <span>{faq.question}</span>
                   <ChevronDown
@@ -90,7 +90,7 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="p-6 pt-0 text-brand-muted border-t border-white/5 bg-brand-dark/20 leading-relaxed">
+                      <div className="p-6 pt-0 text-brand-muted border-t border-white/5 bg-brand-dark/30 leading-relaxed text-sm">
                         {faq.answer}
                       </div>
                     </motion.div>
