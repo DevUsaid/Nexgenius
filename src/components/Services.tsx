@@ -117,21 +117,21 @@ const itemVariants: Variants = {
 
 export default function Services() {
   return (
-    <section id="services" className="scroll-mt-28 py-24 bg-transparent relative z-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="scroll-mt-28 py-16 sm:py-24 bg-transparent relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-primary mb-4">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-brand-primary mb-3 sm:mb-4">
             Services
           </p>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 tracking-tight text-white">
             What We <span className="text-gradient">Offer</span>
           </h2>
-          <p className="text-brand-muted max-w-2xl mx-auto text-lg font-medium">
+          <p className="text-brand-muted max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-medium">
             Deploy autonomous AI agents, robust workflows, and high-performance digital systems to scale your business.
           </p>
         </motion.div>
@@ -141,29 +141,29 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="glass-card p-8 rounded-[2.5rem] flex flex-col justify-between items-start text-left h-full"
+              className="glass-card p-6 sm:p-8 rounded-3xl sm:rounded-[2.5rem] flex flex-col justify-between items-start text-left h-full"
             >
               <div className="w-full">
-                <div className="flex justify-between items-center mb-8 w-full">
-                  <div className="p-4 bg-brand-dark/60 border border-white/10 rounded-2xl text-brand-primary transition-all duration-300">
+                <div className="flex justify-between items-center mb-6 sm:mb-8 w-full">
+                  <div className="p-3 sm:p-4 bg-brand-dark/60 border border-white/10 rounded-2xl text-brand-primary transition-all duration-300">
                     {service.icon}
                   </div>
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full">
+                  <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2.5 sm:px-3 py-1 rounded-full">
                     {service.badge}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 text-white">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">
                   {service.title}
                 </h3>
 
-                <p className="text-brand-muted leading-relaxed text-sm mb-6">
+                <p className="text-brand-muted leading-relaxed text-xs sm:text-sm mb-6">
                   {service.description}
                 </p>
               </div>
