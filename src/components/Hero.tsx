@@ -69,10 +69,10 @@ export default function Hero() {
               <button
                 onClick={() => setIsContactModalOpen(true)}
                 aria-label="Book a Call"
-                className="w-full sm:w-auto bg-gradient-to-r from-[#059669] to-[#10b981] text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-brand-primary/20 hover:scale-[1.03] transition-all flex items-center justify-center group cursor-pointer border border-[#10b981]/20"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#39FF14] via-[#32E000] to-[#00FF7F] text-[#021107] px-10 py-5 rounded-full font-extrabold text-lg shadow-[0_0_25px_rgba(57,255,20,0.4)] hover:shadow-[0_0_35px_rgba(57,255,20,0.6)] hover:scale-[1.03] transition-all flex items-center justify-center group cursor-pointer border border-[#39FF14]/50"
               >
                 Book a Call
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform stroke-[2.5]" />
               </button>
               <a
                 href="#pricing"

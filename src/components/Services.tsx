@@ -1,44 +1,98 @@
 "use client";
 
-import { Cpu, MessageSquare, Zap, Code, Sparkles, Layout, ArrowUpRight } from 'lucide-react';
+import { Bot, MessageSquare, Mic, Database, Workflow, Globe, ShoppingCart, LayoutTemplate, Cpu, Users, TrendingUp, Headphones, FileSearch, Code2, Eye, ArrowUpRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
 const services = [
   {
-    title: 'Custom Web Development',
-    description: 'Build high-performance, SEO-optimized, and scalable web applications using modern frameworks like Next.js and React.',
-    icon: <Code className="h-7 w-7" />,
-    badge: 'Web'
+    title: 'AI Agent Development',
+    description: 'Custom autonomous AI agents built for customer support, sales, lead qualification, and HR recruitment.',
+    icon: <Bot className="h-7 w-7" />,
+    badge: 'Primary'
   },
   {
-    title: 'AI SaaS Development',
-    description: 'End-to-end development of robust AI-powered Software as a Service products tailored to your specific business ideas.',
-    icon: <Sparkles className="h-7 w-7" />,
-    badge: 'Product'
-  },
-  {
-    title: 'Custom AI Integration',
-    description: 'Integrate advanced OpenAI, Anthropic, or custom local LLM intelligence directly into your existing software and operational pipelines.',
-    icon: <Cpu className="h-7 w-7" />,
-    badge: 'Intelligence'
-  },
-  {
-    title: 'AI-Powered Chatbots',
-    description: 'Build custom-trained, context-aware 24/7 support chatbots that resolve customer queries instantly and sync data directly with your backend.',
+    title: 'AI Chatbot Development',
+    description: 'Context-aware chatbots for websites, WhatsApp, Instagram, and E-commerce tailored to your specific data.',
     icon: <MessageSquare className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'Voice AI Solutions',
+    description: 'AI receptionists and call answering agents capable of booking appointments and handling outbound support.',
+    icon: <Mic className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'RAG AI Systems',
+    description: 'Knowledge base chatbots and Document AI that securely queries your company SOPs and PDFs.',
+    icon: <Database className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'Multi-Agent Systems',
+    description: 'Deploy teams of collaborating AI agents (LangGraph, CrewAI) that execute complex multi-step workflows autonomously.',
+    icon: <Users className="h-7 w-7" />,
+    badge: 'AI Agents'
+  },
+  {
+    title: 'AI Sales & Prospecting Agents',
+    description: 'Autonomous sales agents that discover qualified leads, craft personalized outreach, handle replies, and book meetings 24/7.',
+    icon: <TrendingUp className="h-7 w-7" />,
+    badge: 'AI Sales'
+  },
+  {
+    title: 'Domain-Specific Custom LLMs',
+    description: 'Custom fine-tuning of open-source models (Llama 3, Mistral) trained exclusively on your private enterprise data.',
+    icon: <Cpu className="h-7 w-7" />,
+    badge: 'Custom LLM'
+  },
+  {
+    title: 'AI Support Desk Agents',
+    description: 'Tier-1 and Tier-2 automated support agents integrated directly into Zendesk, Intercom, and CRM platforms.',
+    icon: <Headphones className="h-7 w-7" />,
     badge: 'Support'
   },
   {
-    title: 'Workflow Automation',
-    description: 'Connect your business tools (Gmail, CRM, Slack) into seamless, custom-built automated workflows that run 24/7.',
-    icon: <Zap className="h-7 w-7" />,
-    badge: 'Efficiency'
+    title: 'Autonomous Research Agents',
+    description: 'AI agents that perform deep multi-source web research, synthesize competitive intelligence, and output structured reports.',
+    icon: <FileSearch className="h-7 w-7" />,
+    badge: 'Research'
   },
   {
-    title: 'UI/UX & Web Design',
-    description: 'Premium, user-centric interface design specifically crafted for modern web apps and complex AI dashboards.',
-    icon: <Layout className="h-7 w-7" />,
-    badge: 'Design'
+    title: 'AI Code & Developer Agents',
+    description: 'Automated code generation, PR review, and automated bug fixing agents integrated into GitHub and DevOps pipelines.',
+    icon: <Code2 className="h-7 w-7" />,
+    badge: 'Dev AI'
+  },
+  {
+    title: 'AI Vision & Document Intelligence',
+    description: 'Extract, analyze, and process complex PDFs, invoices, and visual data with multimodal AI vision models.',
+    icon: <Eye className="h-7 w-7" />,
+    badge: 'Vision AI'
+  },
+  {
+    title: 'AI Automation',
+    description: 'Workflow, CRM, and email automation designed to streamline operations and eliminate manual data entry.',
+    icon: <Workflow className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'Custom Web Applications',
+    description: 'AI-powered workflows, Business Automation platforms, custom dashboards, and admin panels built with modern architecture.',
+    icon: <Globe className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Shopify and WooCommerce stores powered by AI shopping assistants and recommendation engines.',
+    icon: <ShoppingCart className="h-7 w-7" />,
+    badge: 'Primary'
+  },
+  {
+    title: 'WordPress Development',
+    description: 'High-performance business websites, portfolios, landing pages, and blogs with integrated SEO and speed optimization.',
+    icon: <LayoutTemplate className="h-7 w-7" />,
+    badge: 'Primary'
   }
 ];
 
@@ -78,7 +132,7 @@ export default function Services() {
             What We <span className="text-gradient">Offer</span>
           </h2>
           <p className="text-brand-muted max-w-2xl mx-auto text-lg font-medium">
-            Supercharge your business operations, reduce manual overhead, and optimize efficiency with our tailored AI workflows.
+            Deploy autonomous AI agents, robust workflows, and high-performance digital systems to scale your business.
           </p>
         </motion.div>
 
@@ -115,7 +169,7 @@ export default function Services() {
               </div>
 
               <a href="#contact" className="inline-flex items-center text-xs font-bold text-brand-primary hover:text-brand-accent transition-colors gap-1 mt-auto">
-                Request Setup <ArrowUpRight className="h-4 w-4" />
+                Explore <ArrowUpRight className="h-4 w-4" />
               </a>
             </motion.div>
           ))}
@@ -124,4 +178,3 @@ export default function Services() {
     </section>
   );
 }
-

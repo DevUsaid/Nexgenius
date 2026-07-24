@@ -28,7 +28,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-28 py-24 px-6 border-t border-white/5 bg-transparent relative overflow-hidden">
+    <section id="contact" className="scroll-mt-28 py-12 md:py-16 px-6 border-t border-white/5 bg-transparent relative overflow-hidden">
       {/* Background glow circle locked within contact bounds */}
       <div className="absolute bottom-[-100px] left-[-10%] w-[550px] h-[550px] rounded-full bg-[#10b981]/10 blur-[130px] pointer-events-none z-0" />
       
@@ -157,7 +157,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-gradient-to-r from-[#059669] to-[#10b981] text-white rounded-2xl py-4 font-bold text-sm hover:shadow-lg hover:shadow-brand-primary/20 hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#39FF14] via-[#32E000] to-[#00FF7F] text-[#021107] font-extrabold rounded-2xl py-4 text-sm shadow-[0_0_20px_rgba(57,255,20,0.4)] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed border border-[#39FF14]/50"
               >
                 {status === 'loading' ? (
                   <>

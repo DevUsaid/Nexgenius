@@ -26,7 +26,7 @@ export default function BackgroundParticles() {
       moveX: Math.random() * 60 - 30,
       duration: Math.random() * 10 + 10,
       delay: Math.random() * 5,
-      color: i % 3 === 0 ? '#4f46e5' : i % 2 === 0 ? '#8b5cf6' : '#6366f1'
+      color: i % 3 === 0 ? '#38BDF8' : i % 2 === 0 ? '#3B82F6' : '#7C3AED'
     }));
     
     const timeout = setTimeout(() => {
