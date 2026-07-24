@@ -150,7 +150,7 @@ function CuteHumanoidRobot() {
 
 export default function Scroll3DScene() {
   return (
-    <div className="absolute top-0 right-0 w-full h-[100vh] pointer-events-none z-40 overflow-hidden">
+    <div className="absolute top-0 right-0 w-full h-[100vh] pointer-events-none z-40 overflow-hidden hidden md:block">
       {/* Soft Neon Green Radial Glow Behind Robot */}
       <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[450px] h-[450px] md:w-[650px] md:h-[650px] bg-[#39FF14]/25 blur-[140px] rounded-full z-0 pointer-events-none mix-blend-screen animate-pulse" style={{ animationDuration: '7s' }} />
 

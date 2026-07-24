@@ -243,10 +243,10 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 font-bold text-brand-dark bg-white rounded-full text-lg transition-all hover:scale-105 hover:bg-brand-primary hover:text-white shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)]"
+            className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 font-extrabold text-[#021107] bg-gradient-to-r from-[#39FF14] via-[#32E000] to-[#00FF7F] rounded-full text-lg transition-all hover:scale-105 shadow-[0_0_30px_rgba(57,255,20,0.4)] hover:shadow-[0_0_40px_rgba(57,255,20,0.6)] border border-[#39FF14]/50"
           >
             Get in Touch
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[2.5]" />
           </Link>
         </motion.div>
       </section>
