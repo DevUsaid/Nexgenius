@@ -334,18 +334,18 @@ export default function ChatbotWidget() {
         type="button"
         whileTap={{ scale: 0.96 }}
         onClick={() => setIsOpen((current) => !current)}
-        className="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-5 py-4 text-white shadow-[0_20px_50px_-18px_rgba(15,23,42,0.45)] transition-all hover:bg-emerald-600"
+        className="group inline-flex items-center gap-2.5 rounded-full bg-slate-950 px-4 py-2.5 text-white shadow-[0_12px_35px_-10px_rgba(15,23,42,0.4)] transition-all hover:bg-emerald-700"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-emerald-300 transition-colors group-hover:text-white">
-          {isOpen ? <X className="h-5 w-5" /> : <Bot className="h-5 w-5" />}
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-emerald-300 transition-colors group-hover:text-white">
+          {isOpen ? <X className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
         </span>
         <span className="hidden pr-1 text-left sm:block">
-          <span className="block text-sm font-bold leading-tight">Need help?</span>
-          <span className="block text-xs text-slate-300 group-hover:text-emerald-100">
-            Chat with NexGenius
+          <span className="block text-xs font-bold leading-tight">Need help?</span>
+          <span className="block text-[10.5px] text-slate-300 group-hover:text-emerald-100">
+            Chat with AI
           </span>
         </span>
-        <MessageCircle className="h-5 w-5 sm:hidden" />
+        <MessageCircle className="h-4 w-4 sm:hidden" />
       </motion.button>
     </div>
   );

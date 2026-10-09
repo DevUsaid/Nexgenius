@@ -2,106 +2,95 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import ContactModal from './ContactModal';
+import Image from 'next/image';
+import { ArrowUpRight, Menu, X, Sparkles, Activity } from 'lucide-react';
 
 export default function Navbar() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Services', href: '#services' },
+    { name: 'AI workforce', href: '#ai-workforce' },
+    { name: 'Solutions', href: '#solutions' },
+    { name: 'Our approach', href: '#approach' },
   ];
 
   return (
-    <>
-      <nav className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[92%] sm:w-[95%] max-w-6xl z-50 rounded-2xl sm:rounded-full border border-[#39FF14]/30 bg-[#061a0d]/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(57,255,20,0.15)] transition-all duration-300">
-        <div className="px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-          <Link 
-            href="/" 
-            className="text-xl sm:text-2xl font-bold tracking-tight text-white hover:opacity-90 flex items-center gap-1 group"
-            onClick={() => setIsMobileMenuOpen(false)}
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-[#E5E7EB]/80 transition-all">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-20 h-20 flex items-center justify-between">
+        
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center py-1 group shrink-0">
+          <Image
+            src="/images/nexgenius-logo-transparent.png"
+            alt="NexGenius - AI & Software Solutions"
+            width={210}
+            height={50}
+            priority
+            unoptimized
+            className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </Link>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2 px-4 py-1.5 rounded-full bg-[#F8FAFC]/90 border border-[#E5E7EB] shadow-xs">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="px-4 py-1.5 rounded-full text-[13px] font-medium text-[#475569] hover:text-[#111D33] hover:bg-white transition-all"
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right CTA Action */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="#contact"
+            className="group relative inline-flex items-center gap-2 px-5 h-[44px] rounded-[8px] bg-[#14532D] hover:bg-[#0c381e] text-white text-[13px] font-semibold transition-all shadow-[0_4px_14px_rgba(20,83,45,0.25)] hover:shadow-[0_6px_20px_rgba(20,83,45,0.35)] hover:scale-[1.02]"
           >
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#39FF14]/20 flex items-center justify-center mr-1.5 sm:mr-2 group-hover:scale-110 transition-transform">
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#39FF14] shadow-[0_0_12px_#39FF14]"></div>
-            </div>
-            Nex<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39FF14] to-[#00FF7F]">Genius</span>
-          </Link>
-
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-1 h-full">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="relative px-5 py-2 text-sm font-bold text-slate-300 hover:text-white transition-colors group h-full flex items-center"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#39FF14] transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 rounded-t-full shadow-[0_0_8px_#39FF14]"></span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                setIsContactModalOpen(true);
-                setIsMobileMenuOpen(false);
-              }}
-              className="hidden sm:inline-flex bg-gradient-to-r from-[#39FF14] via-[#32E000] to-[#00FF7F] text-[#021107] px-5 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-extrabold shadow-[0_0_20px_rgba(57,255,20,0.4)] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] hover:scale-[1.03] transition-all cursor-pointer border border-[#39FF14]/50"
-            >
-              Start Project
-            </button>
-
-            {/* Mobile Hamburger Menu Toggle Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6 text-[#39FF14]" /> : <Menu className="h-6 w-6 text-white" />}
-            </button>
-          </div>
+            <span>Let’s talk</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </div>
 
-        {/* Mobile Dropdown Drawer */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden px-4 pt-2 pb-6 border-t border-white/10 bg-[#061a0d]/95 backdrop-blur-2xl rounded-b-2xl animate-in slide-in-from-top duration-300">
-            <div className="flex flex-col space-y-2 pt-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-xl text-base font-bold text-slate-200 hover:text-white hover:bg-[#39FF14]/10 transition-all flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-70"></span>
-                </Link>
-              ))}
-              <div className="pt-3">
-                <button
-                  onClick={() => {
-                    setIsContactModalOpen(true);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="w-full bg-gradient-to-r from-[#39FF14] via-[#32E000] to-[#00FF7F] text-[#021107] py-3.5 rounded-xl text-sm font-extrabold shadow-[0_0_20px_rgba(57,255,20,0.4)] text-center cursor-pointer border border-[#39FF14]/50"
-                >
-                  Start Project
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg text-[#111D33] hover:bg-gray-100 transition-colors"
+          aria-label="Toggle navigation"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
 
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
-    </>
+      {/* Mobile Drawer */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-b border-[#E5E7EB] bg-white/95 backdrop-blur-xl px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-[15px] font-medium text-[#111D33] hover:text-[#14532D] py-2 border-b border-gray-100"
+            >
+              {link.name}
+            </a>
+          ))}
+          <div className="pt-2">
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 h-12 rounded-[8px] bg-[#14532D] text-white text-[14px] font-semibold"
+            >
+              <span>Let’s talk</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
