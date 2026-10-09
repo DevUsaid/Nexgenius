@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import {
   ArrowUpRight,
   Camera,
@@ -109,8 +110,8 @@ export default function SolutionConceptsSection() {
     <section id="solutions" className="w-full bg-white py-24 lg:py-32 scroll-mt-24 border-b border-[#E5E7EB]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
 
-        {/* Section Header */}
-        <div className="mb-16">
+        {/* Section Header with Smooth Scroll Reveal */}
+        <ScrollReveal className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] border border-[#BBF7D0] font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-[#14532D] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#14532D]" />
             <span>03 / POSSIBILITIES IN PRACTICE</span>
@@ -125,13 +126,13 @@ export default function SolutionConceptsSection() {
               Real-time interactive prototypes showing how custom software and autonomous automation operate seamlessly inside your organization.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* 2 Concept Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
 
           {/* Concept Card 1: Enterprise Web Application */}
-          <div className="flex flex-col group">
+          <ScrollReveal className="flex flex-col group h-full">
             {/* Visual Workspace Mockup */}
             <div className="w-full h-[400px] sm:h-[430px] rounded-[16px] bg-[#FAFBFD] border border-[#E5E7EB] p-4 sm:p-6 flex items-center justify-center overflow-hidden mb-6 transition-all duration-300 group-hover:border-[#14532D]/30 group-hover:shadow-[0_20px_50px_rgba(20,83,45,0.08)] relative">
 
@@ -409,10 +410,10 @@ export default function SolutionConceptsSection() {
             <p className="text-[14px] text-[#617087] leading-[1.65]">
               A custom portal for approvals, automated document parsing, and cross-team workflows, engineered to eradicate fragmented manual spreadsheets.
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Concept Card 2: Mobile Product (LIVE ANIMATED REAL-TIME EXECUTION) */}
-          <div className="flex flex-col group">
+          <ScrollReveal delay={0.15} className="flex flex-col group h-full">
             {/* Visual Mobile Mockup with Continuous Live Animations */}
             <div className="w-full h-[400px] sm:h-[430px] rounded-[16px] bg-gradient-to-br from-[#F0FDF4] to-[#FAFBFD] border border-[#BBF7D0] p-6 sm:p-8 flex items-center justify-between overflow-hidden mb-6 transition-all duration-300 group-hover:border-[#86EFAC] group-hover:shadow-[0_20px_50px_rgba(20,83,45,0.08)] relative">
 
@@ -591,7 +592,7 @@ export default function SolutionConceptsSection() {
             <p className="text-[14px] text-[#617087] leading-[1.65]">
               A mobile companion for on-site engineering teams, with digital task checklists, photo capture, and instantaneous HQ data sync.
             </p>
-          </div>
+          </ScrollReveal>
 
         </div>
 

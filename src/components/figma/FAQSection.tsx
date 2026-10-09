@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import { ArrowUpRight, Plus, Minus } from 'lucide-react';
 
 export default function FAQSection() {
@@ -35,7 +36,7 @@ export default function FAQSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Left Column: FAQ Introduction */}
-          <div className="lg:col-span-5 flex flex-col items-start max-w-[420px]">
+          <ScrollReveal className="lg:col-span-5 flex flex-col items-start max-w-[420px]">
             <div className="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#14532D] mb-4">
               07 / BEFORE WE BEGIN
             </div>
@@ -56,10 +57,10 @@ export default function FAQSection() {
               <span>Have something else in mind?</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Interactive Accordion */}
-          <div className="lg:col-span-7 divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
+          <ScrollReveal delay={0.15} className="lg:col-span-7 divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
@@ -84,7 +85,7 @@ export default function FAQSection() {
                 </div>
               );
             })}
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import { ArrowUpRight, ArrowDown, Sparkles, UserCheck, Cpu, Zap, Activity } from 'lucide-react';
 
 export default function IntelligentEnterpriseSection() {
@@ -19,11 +20,11 @@ export default function IntelligentEnterpriseSection() {
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20 relative z-10">
 
-        {/* Top Grid: Promise + Blueprint */}
+        {/* Top Grid: Promise + Blueprint with Scroll Reveal */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20 lg:mb-24">
 
           {/* Left Column: AI Promise */}
-          <div className="lg:col-span-6 flex flex-col items-start max-w-[570px]">
+          <ScrollReveal className="lg:col-span-6 flex flex-col items-start max-w-[570px]">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#14532D]/40 border border-[#10B981]/30 font-mono text-[11px] font-semibold tracking-[0.12em] uppercase text-[#A7F3D0] mb-6 backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
               <span>02 / THE INTELLIGENT ENTERPRISE</span>
@@ -32,7 +33,7 @@ export default function IntelligentEnterpriseSection() {
             <h2 className="text-[38px] sm:text-[48px] lg:text-[56px] font-semibold text-white tracking-tight leading-[1.08] mb-6">
               Your next team member <br />
               <span className="text-gradient-emerald">
-                might be an autonomous system.
+                 might be an autonomous system.
               </span>
             </h2>
 
@@ -52,10 +53,10 @@ export default function IntelligentEnterpriseSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]"></span>
               <span><strong className="text-white">AI FTE /</strong> Role-based digital workers with defined permissions, SLA guarantees, and audit logs.</span>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Orchestration Blueprint (Cyber Terminal Look) */}
-          <div className="lg:col-span-6">
+          <ScrollReveal delay={0.15} className="lg:col-span-6">
             <div className="bg-[#111827]/90 backdrop-blur-2xl border border-white/10 rounded-[16px] p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.6)] relative overflow-hidden ring-1 ring-white/5">
 
               {/* Subtle Corner Glow */}
@@ -151,14 +152,14 @@ export default function IntelligentEnterpriseSection() {
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
 
-        {/* Bottom Spectrum: 3 Next.js Feature Columns */}
-        <div className="pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Bottom Spectrum: 3 Next.js Feature Columns with Smooth Stagger */}
+        <StaggerContainer className="pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 
-          <div className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all">
+          <StaggerItem className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all h-full">
             <h3 className="text-[22px] sm:text-[24px] font-semibold text-white mb-2 flex items-center gap-2">
               <span className="text-[#34D399]">01</span> AI Automation
             </h3>
@@ -168,9 +169,9 @@ export default function IntelligentEnterpriseSection() {
             <p className="text-[13px] text-slate-400">
               Cross-app approvals, document data extraction, and ERP auto-sync.
             </p>
-          </div>
+          </StaggerItem>
 
-          <div className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all">
+          <StaggerItem className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all h-full">
             <h3 className="text-[22px] sm:text-[24px] font-semibold text-white mb-2 flex items-center gap-2">
               <span className="text-[#34D399]">02</span> AI Autonomous Agents
             </h3>
@@ -180,9 +181,9 @@ export default function IntelligentEnterpriseSection() {
             <p className="text-[13px] text-slate-400">
               Knowledge retrieval engines, customer triage, and intelligent dispatching.
             </p>
-          </div>
+          </StaggerItem>
 
-          <div className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all">
+          <StaggerItem className="p-6 rounded-[12px] bg-white/[0.02] border border-white/5 hover:border-[#10B981]/30 transition-all h-full">
             <h3 className="text-[22px] sm:text-[24px] font-semibold text-white mb-2 flex items-center gap-2">
               <span className="text-[#34D399]">03</span> AI FTE Workforce
             </h3>
@@ -192,9 +193,9 @@ export default function IntelligentEnterpriseSection() {
             <p className="text-[13px] text-slate-400">
               Standard operating procedures, automated task logs, and continuous learning.
             </p>
-          </div>
+          </StaggerItem>
 
-        </div>
+        </StaggerContainer>
 
       </div>
     </section>

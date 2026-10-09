@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import {
   Cpu,
   LayoutGrid,
@@ -319,8 +320,8 @@ export default function ServicesSection() {
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
 
-        {/* Section Header */}
-        <div className="mb-16">
+        {/* Section Header with Smooth Scroll Reveal */}
+        <ScrollReveal className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] border border-[#BBF7D0] font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-[#14532D] mb-4 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#14532D]" />
             <span>01 / CORE CAPABILITIES</span>
@@ -335,14 +336,16 @@ export default function ServicesSection() {
               One integrated engineering partner across autonomous intelligence, modern digital products, and high-availability cloud infrastructure.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* 2x3 Interactive 3D Tilt Cards Grid (Linear / Apple VisionOS Style) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {/* 2x3 Cards Grid with Apple/Linear Smooth Staggered Cascade */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {services.map((service) => (
-            <TiltCard key={service.id} service={service} />
+            <StaggerItem key={service.id} className="h-full">
+              <TiltCard service={service} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
       </div>
     </section>

@@ -7,6 +7,8 @@ import EngineeringContinuitySection from '@/components/figma/EngineeringContinui
 import EngagementModelsSection from '@/components/figma/EngagementModelsSection';
 import FAQSection from '@/components/figma/FAQSection';
 import ConsultationSection from '@/components/figma/ConsultationSection';
+import { Analytics } from '@vercel/analytics/next';
+
 
 export default function Home() {
   return (
@@ -38,6 +40,10 @@ export default function Home() {
 
       {/* 08 / Let's Build What's Next (Project Consultation Lead Form) */}
       <ConsultationSection />
+
+      {/* vercel analytics */}
+      <Analytics />
+
     </main>
   );
 }

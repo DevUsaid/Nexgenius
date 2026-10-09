@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { ArrowUpRight, Check } from 'lucide-react';
 
 export default function ConsultationSection() {
@@ -41,8 +42,8 @@ export default function ConsultationSection() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Consultation Invitation */}
-          <div className="lg:col-span-6 flex flex-col items-start max-w-[540px]">
+          {/* Left Column: Consultation Invitation with Scroll Reveal */}
+          <ScrollReveal className="lg:col-span-6 flex flex-col items-start max-w-[540px]">
             <div className="font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-[#A7F3D0] mb-5">
               08 / LET’S BUILD WHAT’S NEXT
             </div>
@@ -86,10 +87,10 @@ export default function ConsultationSection() {
                 </span>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          {/* Right Column: Lead Form Card */}
-          <div className="lg:col-span-6">
+          {/* Right Column: Lead Form Card with Scroll Reveal */}
+          <ScrollReveal delay={0.15} className="lg:col-span-6">
             <div className="bg-white rounded-[12px] p-6 sm:p-9 text-[#111827] shadow-2xl">
               <h3 className="text-[22px] sm:text-[25px] font-medium text-[#111D33] mb-6">
                 Tell us about your project
@@ -227,7 +228,7 @@ export default function ConsultationSection() {
                 </form>
               )}
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

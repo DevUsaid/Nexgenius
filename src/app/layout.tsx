@@ -4,6 +4,8 @@ import ChatbotWidget from "@/components/ChatbotWidget";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const inter = Inter({
@@ -39,6 +41,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${ibmPlexMono.variable} antialiased font-sans bg-white text-[#111827] selection:bg-[#14532D] selection:text-white min-h-screen overflow-x-hidden`}
       >
+        <ScrollProgress />
         <SmoothScroll />
         <Navbar />
         {children}

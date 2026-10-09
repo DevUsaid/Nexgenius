@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import { 
   ShieldCheck, 
   Server, 
@@ -69,7 +70,7 @@ export default function EngineeringContinuitySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Live Animated Cloud & Infrastructure Continuity Console */}
-          <div className="lg:col-span-6 flex justify-center">
+          <ScrollReveal className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-[540px] h-[440px] sm:h-[460px] rounded-[18px] overflow-hidden bg-[#0B0F19] border border-white/10 shadow-[0px_25px_60px_rgba(0,0,0,0.35)] p-5 sm:p-6 flex flex-col justify-between ring-1 ring-white/5 group">
               
               {/* Background Cyber Grid */}
@@ -290,10 +291,10 @@ export default function EngineeringContinuitySection() {
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
-          {/* Right Column: Engineering Principles */}
-          <div className="lg:col-span-6 flex flex-col items-start">
+          {/* Right Column: Engineering Principles with Scroll Reveal */}
+          <ScrollReveal delay={0.15} className="lg:col-span-6 flex flex-col items-start">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] border border-[#BBF7D0] font-mono text-[11px] font-semibold tracking-[0.12em] uppercase text-[#14532D] mb-5">
               <span>05 / BUILT FOR THE LONG TERM</span>
             </div>
@@ -307,29 +308,31 @@ export default function EngineeringContinuitySection() {
               We connect disciplined software engineering with ongoing operational care—so your applications, cloud architecture and automated pipelines thrive long after release.
             </p>
 
-            {/* Commitments List */}
-            <div className="w-full space-y-5 pt-6 border-t border-[#E5E7EB]">
+            {/* Commitments List with Stagger */}
+            <StaggerContainer className="w-full space-y-5 pt-6 border-t border-[#E5E7EB]">
               {commitments.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="flex items-start gap-4 p-3 rounded-[12px] transition-all hover:bg-[#F8FAFC]">
-                    <div className="w-10 h-10 rounded-[10px] bg-[#F0FDF4] border border-[#BBF7D0] flex items-center justify-center shrink-0 mt-0.5 text-[#14532D] shadow-xs">
-                      <Icon className="w-5 h-5" />
+                  <StaggerItem key={item.title}>
+                    <div className="flex items-start gap-4 p-3 rounded-[12px] transition-all hover:bg-[#F8FAFC]">
+                      <div className="w-10 h-10 rounded-[10px] bg-[#F0FDF4] border border-[#BBF7D0] flex items-center justify-center shrink-0 mt-0.5 text-[#14532D] shadow-xs">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-[16px] font-semibold text-[#111D33] mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-[13px] text-[#617087] leading-[1.5]">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-[16px] font-semibold text-[#111D33] mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-[13px] text-[#617087] leading-[1.5]">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+                  </StaggerItem>
                 );
               })}
-            </div>
+            </StaggerContainer>
 
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

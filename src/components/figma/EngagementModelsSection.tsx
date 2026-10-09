@@ -1,5 +1,6 @@
 'use client';
 
+import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import { Box, Users, Settings2, ArrowUpRight, Sparkles, Check } from 'lucide-react';
 
 export default function EngagementModelsSection() {
@@ -45,8 +46,8 @@ export default function EngagementModelsSection() {
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
         
-        {/* Section Header */}
-        <div className="mb-16">
+        {/* Section Header with Smooth Scroll Reveal */}
+        <ScrollReveal className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] border border-[#BBF7D0] font-mono text-[11px] font-semibold tracking-[0.12em] uppercase text-[#14532D] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#14532D]" />
             <span>06 / YOUR TEAM, EXTENDED</span>
@@ -61,17 +62,18 @@ export default function EngagementModelsSection() {
               Start with what you need today. Choose an engagement model that matches your velocity, technical scope, and business objectives.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* 3 Balanced Symmetrical Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        {/* 3 Balanced Symmetrical Cards with Staggered Cascade */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {models.map((model) => {
             const Icon = model.icon;
             
             // Middle Card: Featured Signature Brand Hero Card
             if (model.isFeatured) {
               return (
-                <div
+                <StaggerItem key={model.title} className="h-full flex flex-col">
+                  <div
                   key={model.title}
                   className="relative p-8 sm:p-9 rounded-[20px] bg-gradient-to-b from-[#14532D] via-[#0E3D1F] to-[#0A2916] text-white shadow-[0px_25px_60px_rgba(20,83,45,0.28)] ring-2 ring-[#34D399]/60 flex flex-col justify-between transition-all duration-300 hover:scale-[1.01] hover:shadow-[0px_30px_70px_rgba(20,83,45,0.4)] group"
                 >
@@ -132,14 +134,16 @@ export default function EngagementModelsSection() {
                     </a>
                   </div>
                 </div>
-              );
-            }
+              </StaggerItem>
+            );
+          }
 
-            // Cards 1 & 3: Clean Symmetrical Brand Cards
-            return (
+          // Cards 1 & 3: Clean Symmetrical Brand Cards
+          return (
+            <StaggerItem key={model.title} className="h-full flex flex-col">
               <div
                 key={model.title}
-                className="relative p-8 rounded-[20px] bg-white border border-[#E5E7EB] hover:border-[#14532D]/40 shadow-[0px_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0px_20px_50px_rgba(20,83,45,0.08)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                className="relative p-8 rounded-[20px] bg-white border border-[#E5E7EB] hover:border-[#14532D]/40 shadow-[0px_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0px_20px_50px_rgba(20,83,45,0.08)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 h-full"
               >
                 {/* Top Subtle Hover Accent */}
                 <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#14532D] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -193,9 +197,10 @@ export default function EngagementModelsSection() {
                   </a>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </StaggerItem>
+          );
+        })}
+      </StaggerContainer>
 
       </div>
     </section>
